@@ -1,0 +1,55 @@
+form{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 100px;
+}
+table{
+    border: solid 1px black;
+}
+.photo{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+.table{
+    width: 80%;
+}
+table{
+    width: 100%;
+}
+.mod{
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    border: 1px solid black;
+}
+.del{
+    height:150px;
+    border: solid;
+    text-align: left;
+    padding: 5px;
+}
+.del h2{
+    text-align: center;
+}
+.lien{
+    margin: 5px;
+    padding: 7px;
+    width: max-content;
+    height: max-content;
+    text-decoration: none;
+    border: solid 1px black;
+    background: rgb(204, 196, 196);
+}
+.lien:hover{
+    border-radius: 5px;
+}
+#formulaire{
+    display: flex;
+}

@@ -1,26 +1,13 @@
-<?php
-  $name = $_POST["name"];
-  $message = $_POST["message"];
-  $priority = filter_input(INPUT_POST,"priority",FILTER_VALIDATE_INT);
-  $type =filter_input(INPUT_POST,"type",FILTER_VALIDATE_INT);
-  $terms = filter_input(INPUT_POST,"terms",FILTER_VALIDATE_BOOL);
-// print_r($_POST)
-if (! $terms) {
-    die("Vous devez accepter");
-}
-// var_dump($name,$message,$priority,$type,$terms);
-$host = "localhost";
-$dbname= "formulaire_db";
-$username ="root";
-$password = "";
-
-$conn = mysqli_connect(
-        hostname:$host,
-        username: $username,
-        password: $password,
-        database: $dbname);
-        if (mysqli_connect_errno()) {
-            die("connection error". mysqli_connect_error());
+<?php   require_once('connect.php');
+        
+        $name = $_POST["name"];
+        $message = $_POST["message"];
+         $priority = filter_input(INPUT_POST,"priority",FILTER_VALIDATE_INT);
+         $type =filter_input(INPUT_POST,"type",FILTER_VALIDATE_INT);
+         $terms = filter_input(INPUT_POST,"terms",FILTER_VALIDATE_BOOL);
+        
+        if (! $terms) {
+            die("Vous devez accepter");
         }
         $sql = "INSERT INTO message (nom,body,priority,type)
         values (?,?,?,?) ";
@@ -32,5 +19,8 @@ $conn = mysqli_connect(
         mysqli_stmt_bind_param($stmt,"ssii",
         $name,$message,$priority,$type); 
         mysqli_stmt_execute($stmt);
-        echo "Informations enrégistrées";                                
-?>
+        echo "Informations enrégistrées";
+        header('location:index.php');
+
+                                        
+?> 
