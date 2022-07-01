@@ -13,12 +13,11 @@
     <div class="form">
         <h1>Contact</h1>
 
-        <form action="form.php" method="post">
+        <form action="<?=htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <label for="name">Name</label>
         <input type="text" name="name" id="name">
         <label for="message">Message</label>
         <textarea name="message" id="message"></textarea> 
-
         <label for="priority" >Priority</label>
         <select name="priority" id="priority">
             <option value="1">Low</option>
